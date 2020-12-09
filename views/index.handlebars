@@ -1,0 +1,68 @@
+<header class="container-fluid">
+    <div class="row">
+        <div class="title col-12 m-3">
+            <h1 class="text-center">Devour The Burger</h1>
+            <p class="text-center">Devour Your Desired Burger or Craft Your Own to Devour</p>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="burger-cards d-flex">
+
+            <div class="card col-sm-12 col-md-6 mr-3">
+                <div class="card-body">
+                    <h2 class="card-header text-center m-2">Burgers to be Devoured</h2>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <div class="row">
+                        <div class="col-6 burgerName p-2">{{burger_name}}</div>
+                        <div class="col-4">
+                            {{#unless devoured}}
+                            <button class="btn btn-outline-success devour-burger m-1" data-id="{{id}}"
+                                data-devoured="{{devoured}}">Devour!</button>
+                            {{/unless}}
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-outline-danger delete-btn mt-1" data-id="{{this.id}}"><i
+                                    class="fa fa-trash mr-4"></i></button>
+                        </div>
+                    </div>
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="card col-sm-12 col-md-6 ml-3">
+                <div class="card-body">
+                    <h2 class="card-header text-center m-2">Devoured Burgers</h2>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <div class="row">
+                        <div class="col-8 burgerName">{{burger_name}}</div>
+                        <div class="col-4">
+                            <button class="btn btn-outline-danger delete-btn m-1" data-id="{{this.id}}"><i
+                                    class="fa fa-trash m-2"></i></button>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="card form-card m-3 p-3 col-sm-12 col-md-4 col-lg-2">
+            <form class="form-group burger-input">
+                <p for="addingNewBurger" class="m-2"><strong>Create A Burger</strong></p>
+                <textarea class="form-control" id="burger" rows="2" cols="10"></textarea>
+                <button class="btn btn-outline-warning burgerBtn m-2" type="submit">Add Your Burger</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>

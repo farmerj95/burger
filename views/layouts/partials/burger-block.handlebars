@@ -1,0 +1,14 @@
+<li>
+    <div class="row">
+        <div class="col-8">{{burger_name}}</div>
+        <div class="col-2">
+            {{#unless devoured}}
+            <button class="btn btn-outline-success devour-burger" data-id="{{id}}"
+                data-devoured="{{devoured}}">Devour!</button>
+            {{/unless}}
+        </div>
+        <div class="col-2">
+            <button class="btn btn-outline-danger delete-btn" data-id="{{this.id}}">Yuck Trash It!</button>
+        </div>
+    </div>
+</li>

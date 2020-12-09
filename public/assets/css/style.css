@@ -1,0 +1,27 @@
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./img/burger-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+.container-fluid {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.burgerBtn {
+    display: flex;
+    align-content: center;
+}
+
+.burgerName {
+    margin-bottom: 2px;
+}
